@@ -1,0 +1,33 @@
+<section id='location' class="certifications">
+    <% if (it.resume.settings?.labels?.categoryProperty?.location?.categoryTitle) { %>
+        <header class="section__title"><%= it.resume.settings?.labels?.categoryProperty?.location?.categoryTitle %></header>
+    <% } %>
+    <article>
+        <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.location}) %>
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.location?.address, 
+            value: it.resume.basics?.location?.address,
+            classes: 'article__text'
+        }) %>
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.location?.postalCode, 
+            value: it.resume.basics?.location?.postalCode,
+            classes: 'article__text'
+        }) %>
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.location?.city, 
+            value: it.resume.basics?.location?.city,
+            classes: 'article__text'
+        }) %>
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.location?.countryCode, 
+            value: it.resume.basics?.location?.countryCode,
+            classes: 'article__text'
+        }) %>
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.location?.region, 
+            value: it.resume.basics?.location?.region,
+            classes: 'article__text'
+        }) %>
+    </article>
+</section>

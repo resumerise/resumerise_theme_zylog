@@ -1,0 +1,29 @@
+<section id="references" class="references">
+	<% if(it.resume.settings?.labels?.categoryProperty?.reference?.categoryTitle) { %>
+		<header class="section__title">
+			<%= it.resume.settings.labels.categoryProperty.reference.categoryTitle %>
+		</header>
+	<% } %>
+	<div class="article-container grid">
+		<% it.resume?.references.forEach(function(reference) { %>
+			<article>
+				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.reference, id: reference.id, showDelete: true}) %>
+				<div class="article-header">
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.reference?.name, 
+						value: reference.name,
+						classes: 'article__title'
+					}) %>
+				</div>
+				<div class="article-content s-grid">
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
+						value: reference.reference,
+						classes: 'article__subtitle'
+					}) %>
+				</div>
+			</article>
+		<% }) %>
+		<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.reference}) %>
+	</div>
+</section>

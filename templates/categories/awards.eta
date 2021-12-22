@@ -1,0 +1,39 @@
+<section id="awards" class="awards">
+	<% if(it.resume.settings?.labels?.categoryProperty?.award?.categoryTitle) { %>
+		<header class="section__title">
+			<%= it.resume.settings.labels.categoryProperty.award.categoryTitle %>
+		</header>
+	<% } %>
+	<div class="article-container grid">
+		<% it.resume?.awards.forEach(function(award) { %>
+			<article>
+				<%~ include('nav', {categoryKey: it.resume.settings?.categoryKeys?.award, id: award.id, showDelete: true}) %>
+				<div class="article-header">
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.award?.title, 
+						value: award.title,
+						classes: 'article__title'
+					}) %>
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.award?.awarder, 
+						value: award.awarder,
+						classes: 'article__subtitle'
+					}) %>
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.award?.date, 
+						value: it.formatDate(award.date, it.resume.settings),
+						classes: 'article__date'
+					}) %>
+				</div>
+				<div class="article-content s-grid">
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
+					value: award.summary,
+					classes: 'article__text'
+				}) %>
+				</div>
+			</article>
+		<% }) %>
+		<%~ include('add', {categoryKey: it.resume.settings?.categoryKeys?.award}) %>
+	</div>
+</section>

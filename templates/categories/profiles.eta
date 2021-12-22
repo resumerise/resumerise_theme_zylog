@@ -1,0 +1,20 @@
+<section id="profiles" class="profiles">
+    <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
+        <header class="section__title">
+            <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
+        </header>
+    <% } %>
+    <div class="article-container grid">
+        <% it.resume.basics.profiles?.forEach(function(profile){ %>
+            <article>
+                <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>
+                <%~ include('profile-item', {
+                    label: profile.network,
+                    url: profile.url,
+                    classes: 'fab'
+                }) %>
+            </article>
+        <% }) %>
+        <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.profile}) %>
+    </div>
+</section>

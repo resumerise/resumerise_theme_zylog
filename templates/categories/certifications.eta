@@ -1,0 +1,30 @@
+<section id="certifications" class="certifications">
+	<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
+		<header class="section__title"><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></header>
+	<% } %>
+	<div class="article-container grid">
+		<% it.resume?.certifications.forEach(function(certificate) { %>
+			<article>
+				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.certificate, showDelete: true, id: certificate.id}) %>
+				<div class="article-header">
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.certificate?.issuer, 
+						value: certificate.issuer,
+						classes: 'article__title'
+					}) %>
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.certificate?.title, 
+						value: certificate.title,
+						classes: 'article__subtitle'
+					}) %>
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.certificate?.issueDate, 
+						value: it.formatDate(certificate.issueDate, it.resume.settings),
+						classes: 'article__date'
+					}) %>
+				</div>
+			</article>
+		<% }) %>
+	</div>
+	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.certificate}) %>
+</section>

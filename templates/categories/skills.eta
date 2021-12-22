@@ -1,0 +1,34 @@
+<section id="skills" class="skills">
+	<% if(it.resume.settings?.labels?.categoryProperty?.skill?.categoryTitle) { %>
+		<header class="section__title">
+			<%= it.resume.settings.labels.categoryProperty.skill.categoryTitle %>
+		</header>
+	<% } %>
+	<div class="article-container grid">
+		<% it.resume?.skills.forEach(function(skill) { %>
+			<article>
+				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.skill}) %>
+				<div class="article-header">
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.skill?.name, 
+						value: skill.name,
+						classes: 'article__title'
+					}) %>
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.skill?.level, 
+						value: skill.level,
+						classes: 'article__subtitle'
+					}) %>
+				</div>
+				<div class="article-content s-grid">
+					<%~ include('list', {
+						label: it.resume.settings?.labels?.categoryProperty?.skill?.keywords, 
+						data: skill.keywords,
+						classes: 'article__list'
+					}) %>
+				</div>
+			</article>
+		<% }) %>
+		<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.skill}) %>
+	</div>
+</section>
