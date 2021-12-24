@@ -1,25 +1,25 @@
-<section id="references" class="references">
+<section id="references" class="references article-left">
 	<% if(it.resume.settings?.labels?.categoryProperty?.reference?.categoryTitle) { %>
 		<header class="section__title">
 			<%= it.resume.settings.labels.categoryProperty.reference.categoryTitle %>
 		</header>
 	<% } %>
-	<div class="article-container grid">
+	<div class="grid">
 		<% it.resume?.references.forEach(function(reference) { %>
-			<article>
+			<article class="article-left-container ">
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.reference, id: reference.id, showDelete: true}) %>
-				<div class="article-header">
+				<div class="article-left-header">
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.reference?.name, 
 						value: reference.name,
 						classes: 'article__title'
 					}) %>
 				</div>
-				<div class="article-content s-grid">
+				<div class="article-left-content s-grid">
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
 						value: reference.reference,
-						classes: 'article__subtitle'
+						classes: 'article__text'
 					}) %>
 				</div>
 			</article>

@@ -4,9 +4,9 @@
             <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
         </header>
     <% } %>
-    <div class="article-container grid">
+    <div class="article-container profiles__article-container">
         <% it.resume.basics.profiles?.forEach(function(profile){ %>
-            <article>
+            <article class="profiles__article">
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>
                 <%~ include('profile-item', {
                     label: profile.network,

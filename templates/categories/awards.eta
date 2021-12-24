@@ -1,23 +1,18 @@
-<section id="awards" class="awards">
+<section id="awards" class="awards article-left">
 	<% if(it.resume.settings?.labels?.categoryProperty?.award?.categoryTitle) { %>
 		<header class="section__title">
 			<%= it.resume.settings.labels.categoryProperty.award.categoryTitle %>
 		</header>
 	<% } %>
-	<div class="article-container grid">
+	<div class="grid">
 		<% it.resume?.awards.forEach(function(award) { %>
-			<article>
+			<article class="article-left-container ">
 				<%~ include('nav', {categoryKey: it.resume.settings?.categoryKeys?.award, id: award.id, showDelete: true}) %>
-				<div class="article-header">
+				<div class="article-left-header">
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.award?.title, 
 						value: award.title,
 						classes: 'article__title'
-					}) %>
-					<%~ include('key-value-item', {
-						label: it.resume.settings?.labels?.categoryProperty?.award?.awarder, 
-						value: award.awarder,
-						classes: 'article__subtitle'
 					}) %>
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.award?.date, 
@@ -25,12 +20,17 @@
 						classes: 'article__date'
 					}) %>
 				</div>
-				<div class="article-content s-grid">
-				<%~ include('key-value-item', {
-					label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
-					value: award.summary,
-					classes: 'article__text'
-				}) %>
+				<div class="article-left-content s-grid">
+					<%~ include('key-value-item', {
+							label: it.resume.settings?.labels?.categoryProperty?.award?.awarder, 
+							value: award.awarder,
+							classes: 'article__subtitle'
+						}) %>
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
+						value: award.summary,
+						classes: 'article__text article__text--left-section'
+					}) %>
 				</div>
 			</article>
 		<% }) %>

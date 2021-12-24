@@ -5,18 +5,19 @@
     <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
         <header class="section__title"><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></header>
     <% } %>
-    <div class="article-container grid">
+    <div class="article-container basics__article-container">
         <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.basics}) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.name, 
             value: it.resume.basics.name,
-            classes: 'article__text'
+            classes: 'section__title basics__section__title'
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
             value: it.resume.basics.label,
-            classes: 'article__text'
+            classes: 'article__title basics__article__title'
         }) %>
+        <div class="contact-container">
         <%~ include('key-url-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
             value: it.resume.basics.website,
@@ -35,6 +36,7 @@
             classes: 'article__phone',
             iconClass: 'fas fa-phone'
         }) %>
+        </div>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.summary, 
             value: it.resume.basics.summary,
