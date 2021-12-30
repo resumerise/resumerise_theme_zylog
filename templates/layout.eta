@@ -12,13 +12,13 @@
 	</head>
 	<body>
 		<main class="main-container">
-
+		<div class="main-container__top-section">
 			<!-- BASICS -->
 				<%~ include("basic", {
 					resume: it.resume,
 					formatDate: it.formatDate
 				}) %>
-	
+				</div>
 
 			<div class="main-container__lower-section">
 
