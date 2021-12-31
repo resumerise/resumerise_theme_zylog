@@ -32,13 +32,13 @@
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.education?.studyType, 
 						value: education.studyType,
-						classes: 'article__text'
+						classes: 'article__text color--dark-gray'
 					}) %>
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.education?.gpa, 
 						value: education.gpa,
 						showLabel: true,
-						classes: 'article__text'
+						classes: 'article__text color--dark-gray'
 					}) %>
 					<%~ include('list', {
 						label: it.resume.settings?.labels?.categoryProperty?.education?.courses, 
