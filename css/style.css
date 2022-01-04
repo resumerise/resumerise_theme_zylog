@@ -130,6 +130,8 @@ body {
   }
   .main-container__right-section {
     width: 20em !important;
+    display: flex !important;
+    flex-direction: column;
   }
   .main-container__top-section {
     margin: 0;
@@ -140,10 +142,19 @@ body {
   .profiles {
     width: 25em;
   }
-  .icon {
-    column-gap: var(--m-1) !important;
+
+  .profile__title {
+    width: 13em !important;
+  }
+
+  .linkedin, .twitter, .facebook, .instagram, .xing, .behance, .dribbble, .medium, .github {
+    margin-right: 0 !important;
+  }
+
+  .fa-link, .fa-envelope, .fa-phone {
     margin-right: 0.5em !important;
   }
+
 }
 
 @media screen {

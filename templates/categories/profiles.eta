@@ -1,6 +1,6 @@
 <section id="profiles" class="profiles">
     <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
-        <header class="section__title">
+        <header class="section__title profile__title">
             <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
         </header>
     <% } %>
