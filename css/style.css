@@ -137,6 +137,13 @@ body {
   li {
     position: relative !important;
   }
+  .profiles {
+    width: 25em;
+  }
+  .icon {
+    column-gap: var(--m-1) !important;
+    margin-right: 0.5em !important;
+  }
 }
 
 @media screen {
@@ -398,7 +405,7 @@ img {
 
 .basics__article__url::after {
   content: "|";
-  margin: 0 var(--m-0-5);;
+  margin: 0 var(--m-0-5);
 }
 
 .basics__article__mail::after {
@@ -459,15 +466,15 @@ li {
 }
 
 li::before {
-  content: '';
+  content: "";
   -webkit-print-color-adjust: exact;
-  height: .3em;
-  width: .3em;
+  height: 0.3em;
+  width: 0.3em;
   background: rgb(65, 63, 63);
   display: block;
   position: absolute;
   transform: rotate(45deg);
-  top: .7em;
+  top: 0.7em;
   left: -1em;
 }
 
