@@ -34,7 +34,7 @@
                     <%~ include('key-value-item', {
                         label: it.resume.settings?.labels?.categoryProperty?.publication?.summary, 
                         value: publication.summary,
-                        classes: 'article__text'
+                        classes: 'article__text color--dark-gray'
                     }) %>
                 </div>
             </article>
