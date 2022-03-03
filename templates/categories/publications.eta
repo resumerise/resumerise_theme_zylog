@@ -21,7 +21,7 @@
                     }) %>
                     <%~ include('key-value-item', {
                         label: it.resume.settings?.labels?.categoryProperty?.publication?.releaseDate, 
-                        value: it.formatDate(publication.releaseDate, it.resume.settings),
+                        value: publication.releaseDate,
                         classes: 'article__date'
                     }) %>
                     <%~ include('key-url-item', {
